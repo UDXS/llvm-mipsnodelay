@@ -1,12 +1,14 @@
-CC = /Users/udxs/Downloads/llvm-project-llvmorg-17.0.6/build/bin/clang
+# This requires the patched Clang. Either build it on your host system or mount this directory into the Docker image from this repo's root directory.
+
+CC = clang
 CFLAG = -target mips -mno-abicalls -fno-stack-protector -fno-builtin -O3
 
-LD = /Users/udxs/Downloads/llvm-project-llvmorg-17.0.6/build/bin/ld.lld
+LD = ld.lld
 
-OBJCOPY = /Users/udxs/Downloads/llvm-project-llvmorg-17.0.6/build/bin/llvm-objcopy
+OBJCOPY = llvm-objcopy
 OBJCOPYFLAG = -j .text -j .data
 
-OBJDUMP = /Users/udxs/Downloads/llvm-project-llvmorg-17.0.6/build/bin/llvm-objdump
+OBJDUMP = llvm-objdump
 OBJDUMPFLAG = -j .text -D -z -D -z
 
 DEPS = custom_inst.h

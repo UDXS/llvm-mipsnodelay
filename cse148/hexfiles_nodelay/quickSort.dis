@@ -1,0 +1,243 @@
+
+quickSort.out:	file format elf32-mips
+
+Disassembly of section .text:
+
+00000030 <__start>:
+      30: 24 00 00 00  	addiu	$zero, $zero, 0x0 <quickSort.c>
+      34: 24 01 00 00  	addiu	$1, $zero, 0x0 <quickSort.c>
+      38: 24 02 00 00  	addiu	$2, $zero, 0x0 <quickSort.c>
+      3c: 24 03 00 00  	addiu	$3, $zero, 0x0 <quickSort.c>
+      40: 24 04 00 00  	addiu	$4, $zero, 0x0 <quickSort.c>
+      44: 24 05 00 00  	addiu	$5, $zero, 0x0 <quickSort.c>
+      48: 24 06 00 00  	addiu	$6, $zero, 0x0 <quickSort.c>
+      4c: 24 07 00 00  	addiu	$7, $zero, 0x0 <quickSort.c>
+      50: 24 08 00 00  	addiu	$8, $zero, 0x0 <quickSort.c>
+      54: 24 09 00 00  	addiu	$9, $zero, 0x0 <quickSort.c>
+      58: 24 0a 00 00  	addiu	$10, $zero, 0x0 <quickSort.c>
+      5c: 24 0b 00 00  	addiu	$11, $zero, 0x0 <quickSort.c>
+      60: 24 0c 00 00  	addiu	$12, $zero, 0x0 <quickSort.c>
+      64: 24 0d 00 00  	addiu	$13, $zero, 0x0 <quickSort.c>
+      68: 24 0e 00 00  	addiu	$14, $zero, 0x0 <quickSort.c>
+      6c: 24 0f 00 00  	addiu	$15, $zero, 0x0 <quickSort.c>
+      70: 24 10 00 00  	addiu	$16, $zero, 0x0 <quickSort.c>
+      74: 24 11 00 00  	addiu	$17, $zero, 0x0 <quickSort.c>
+      78: 24 12 00 00  	addiu	$18, $zero, 0x0 <quickSort.c>
+      7c: 24 13 00 00  	addiu	$19, $zero, 0x0 <quickSort.c>
+      80: 24 14 00 00  	addiu	$20, $zero, 0x0 <quickSort.c>
+      84: 24 15 00 00  	addiu	$21, $zero, 0x0 <quickSort.c>
+      88: 24 16 00 00  	addiu	$22, $zero, 0x0 <quickSort.c>
+      8c: 24 17 00 00  	addiu	$23, $zero, 0x0 <quickSort.c>
+      90: 24 18 00 00  	addiu	$24, $zero, 0x0 <quickSort.c>
+      94: 24 19 00 00  	addiu	$25, $zero, 0x0 <quickSort.c>
+      98: 24 1a 00 00  	addiu	$26, $zero, 0x0 <quickSort.c>
+      9c: 24 1b 00 00  	addiu	$27, $zero, 0x0 <quickSort.c>
+      a0: 24 1c 00 00  	addiu	$gp, $zero, 0x0 <quickSort.c>
+      a4: 24 1d 00 00  	addiu	$sp, $zero, 0x0 <quickSort.c>
+      a8: 24 1e 00 00  	addiu	$fp, $zero, 0x0 <quickSort.c>
+      ac: 24 1f 00 00  	addiu	$ra, $zero, 0x0 <quickSort.c>
+      b0: 3c 1d 00 10  	lui	$sp, 0x10 <quickSort.c+0x10>
+      b4: 0c 00 00 8b  	jal	0x22c <begin>
+      b8: 00 00 00 00  	nop <quickSort.c>
+      bc: 03 80 e0 25  	move	$gp, $gp
+      c0: 40 9c b8 00  	mtc0	$gp, $23, 0x0 <quickSort.c>
+      c4: 00 00 00 00  	nop <quickSort.c>
+      c8: 40 9c c8 00  	mtc0	$gp, $25, 0x0 <quickSort.c>
+      cc: 08 00 00 33  	j	0xcc <__start+0x9c>
+      d0: 00 00 00 00  	nop <quickSort.c>
+      d4: 00 00 00 00  	nop <quickSort.c>
+      d8: 04 17 00 01  	<unknown>
+      dc: 04 17 00 01  	<unknown>
+
+000000e0 <quickSort>:
+      e0: 27 bd e0 b0  	addiu	$sp, $sp, -0x1f50 <array+0xffffffffffffdcd0>
+      e4: af bf 1f 4c  	sw	$ra, 0x1f4c($sp)
+      e8: af be 1f 48  	sw	$fp, 0x1f48($sp)
+      ec: af b0 1f 44  	sw	$16, 0x1f44($sp)
+      f0: 03 a0 f0 25  	move	$fp, $sp
+      f4: af c5 00 04  	sw	$5, 0x4($fp)
+      f8: 24 82 00 04  	addiu	$2, $4, 0x4 <quickSort.c+0x4>
+      fc: 24 03 00 00  	addiu	$3, $zero, 0x0 <quickSort.c>
+     100: 27 c5 0f a4  	addiu	$5, $fp, 0xfa4 <array+0xbc4>
+     104: 27 c6 00 04  	addiu	$6, $fp, 0x4 <quickSort.c+0x4>
+     108: 24 07 03 e7  	addiu	$7, $zero, 0x3e7 <array+0x7>
+     10c: af c0 0f a4  	sw	$zero, 0xfa4($fp)
+     110: 08 00 00 47  	j	0x11c <quickSort+0x3c>
+     114: 24 63 ff ff  	addiu	$3, $3, -0x1 <array+0xfffffffffffffc1f>
+     118: 04 60 00 3b  	bltz	$3, 0x208 <quickSort+0x128>
+     11c: 00 03 08 80  	sll	$1, $3, 0x2 <quickSort.c+0x2>
+     120: 00 a1 40 21  	addu	$8, $5, $1
+     124: 8d 0d 00 00  	lw	$13, 0x0($8)
+     128: 00 c1 40 21  	addu	$8, $6, $1
+     12c: 8d 09 00 00  	lw	$9, 0x0($8)
+     130: 25 2c ff ff  	addiu	$12, $9, -0x1 <array+0xfffffffffffffc1f>
+     134: 01 ac 08 2a  	slt	$1, $13, $12
+     138: 10 20 ff f6  	beqz	$1, 0x114 <quickSort+0x34>
+     13c: 10 67 00 34  	beq	$3, $7, 0x210 <quickSort+0x130>
+     140: 00 0d 08 80  	sll	$1, $13, 0x2 <quickSort.c+0x2>
+     144: 00 81 08 21  	addu	$1, $4, $1
+     148: 8c 2a 00 00  	lw	$10, 0x0($1)
+     14c: 08 00 00 57  	j	0x15c <quickSort+0x7c>
+     150: 25 ed ff ff  	addiu	$13, $15, -0x1 <array+0xfffffffffffffc1f>
+     154: 01 ac 08 2a  	slt	$1, $13, $12
+     158: 10 20 00 21  	beqz	$1, 0x1e0 <quickSort+0x100>
+     15c: 00 0c 08 80  	sll	$1, $12, 0x2 <quickSort.c+0x2>
+     160: 01 80 58 25  	move	$11, $12
+     164: 00 41 c0 21  	addu	$24, $2, $1
+     168: 8f 0c ff fc  	lw	$12, -0x4($24)
+     16c: 01 ab 78 2a  	slt	$15, $13, $11
+     170: 27 0e ff fc  	addiu	$14, $24, -0x4 <array+0xfffffffffffffc1c>
+     174: 25 6b ff ff  	addiu	$11, $11, -0x1 <array+0xfffffffffffffc1f>
+     178: 11 e0 00 03  	beqz	$15, 0x188 <quickSort+0xa8>
+     17c: 01 8a 08 2a  	slt	$1, $12, $10
+     180: 01 c0 c0 25  	move	$24, $14
+     184: 10 20 ff f8  	beqz	$1, 0x168 <quickSort+0x88>
+     188: 11 e0 00 05  	beqz	$15, 0x1a0 <quickSort+0xc0>
+     18c: 00 0d 08 80  	sll	$1, $13, 0x2 <quickSort.c+0x2>
+     190: 25 af 00 01  	addiu	$15, $13, 0x1 <quickSort.c+0x1>
+     194: 00 81 08 21  	addu	$1, $4, $1
+     198: ac 2c 00 00  	sw	$12, 0x0($1)
+     19c: 08 00 00 69  	j	0x1a4 <quickSort+0xc4>
+     1a0: 01 a0 78 25  	move	$15, $13
+     1a4: 00 0f 08 80  	sll	$1, $15, 0x2 <quickSort.c+0x2>
+     1a8: 25 6c 00 01  	addiu	$12, $11, 0x1 <quickSort.c+0x1>
+     1ac: 00 81 80 21  	addu	$16, $4, $1
+     1b0: 8e 0d 00 00  	lw	$13, 0x0($16)
+     1b4: 01 ec c8 2a  	slt	$25, $15, $12
+     1b8: 26 18 00 04  	addiu	$24, $16, 0x4 <quickSort.c+0x4>
+     1bc: 25 ef 00 01  	addiu	$15, $15, 0x1 <quickSort.c+0x1>
+     1c0: 13 20 00 03  	beqz	$25, 0x1d0 <quickSort+0xf0>
+     1c4: 01 4d 08 2a  	slt	$1, $10, $13
+     1c8: 03 00 80 25  	move	$16, $24
+     1cc: 10 20 ff f8  	beqz	$1, 0x1b0 <quickSort+0xd0>
+     1d0: 13 20 ff df  	beqz	$25, 0x150 <quickSort+0x70>
+     1d4: 01 60 60 25  	move	$12, $11
+     1d8: ad cd 00 00  	sw	$13, 0x0($14)
+     1dc: 08 00 00 54  	j	0x150 <quickSort+0x70>
+     1e0: 24 63 00 01  	addiu	$3, $3, 0x1 <quickSort.c+0x1>
+     1e4: af 0a ff fc  	sw	$10, -0x4($24)
+     1e8: 00 03 08 80  	sll	$1, $3, 0x2 <quickSort.c+0x2>
+     1ec: 00 c1 50 21  	addu	$10, $6, $1
+     1f0: 00 a1 08 21  	addu	$1, $5, $1
+     1f4: ac 2f 00 00  	sw	$15, 0x0($1)
+     1f8: 25 e1 ff ff  	addiu	$1, $15, -0x1 <array+0xfffffffffffffc1f>
+     1fc: ad 49 00 00  	sw	$9, 0x0($10)
+     200: ad 01 00 00  	sw	$1, 0x0($8)
+     204: 04 61 ff c5  	bgez	$3, 0x11c <quickSort+0x3c>
+     208: 24 02 00 01  	addiu	$2, $zero, 0x1 <quickSort.c+0x1>
+     20c: 08 00 00 85  	j	0x214 <quickSort+0x134>
+     210: 24 02 00 00  	addiu	$2, $zero, 0x0 <quickSort.c>
+     214: 03 c0 e8 25  	move	$sp, $fp
+     218: 8f b0 1f 44  	lw	$16, 0x1f44($sp)
+     21c: 8f be 1f 48  	lw	$fp, 0x1f48($sp)
+     220: 8f bf 1f 4c  	lw	$ra, 0x1f4c($sp)
+     224: 27 bd 1f 50  	addiu	$sp, $sp, 0x1f50 <array+0x1b70>
+     228: 03 e0 00 08  	jr	$ra
+
+0000022c <begin>:
+     22c: 27 bd e0 b0  	addiu	$sp, $sp, -0x1f50 <array+0xffffffffffffdcd0>
+     230: af bf 1f 4c  	sw	$ra, 0x1f4c($sp)
+     234: af be 1f 48  	sw	$fp, 0x1f48($sp)
+     238: af b0 1f 44  	sw	$16, 0x1f44($sp)
+     23c: 03 a0 f0 25  	move	$fp, $sp
+     240: 3c 01 00 00  	lui	$1, 0x0 <quickSort.c>
+     244: 34 02 9c 40  	ori	$2, $zero, 0x9c40 <array+0x9860>
+     248: 24 21 03 e0  	addiu	$1, $1, 0x3e0 <array>
+     24c: 00 22 08 21  	addu	$1, $1, $2
+     250: 34 02 a4 14  	ori	$2, $zero, 0xa414 <array+0xa034>
+     254: 8c 21 00 00  	lw	$1, 0x0($1)
+     258: 14 22 00 03  	bne	$1, $2, 0x268 <begin+0x3c>
+     25c: 24 02 00 01  	addiu	$2, $zero, 0x1 <quickSort.c+0x1>
+     260: 40 82 b8 00  	mtc0	$2, $23, 0x0 <quickSort.c>
+     264: 08 00 00 9c  	j	0x270 <begin+0x44>
+     268: 24 02 00 01  	addiu	$2, $zero, 0x1 <quickSort.c+0x1>
+     26c: 40 82 c0 00  	mtc0	$2, $24, 0x0 <quickSort.c>
+     270: 3c 05 00 00  	lui	$5, 0x0 <quickSort.c>
+     274: 24 01 4e 20  	addiu	$1, $zero, 0x4e20 <array+0x4a40>
+     278: 24 02 00 00  	addiu	$2, $zero, 0x0 <quickSort.c>
+     27c: 27 c3 0f a4  	addiu	$3, $fp, 0xfa4 <array+0xbc4>
+     280: 27 c4 00 04  	addiu	$4, $fp, 0x4 <quickSort.c+0x4>
+     284: 24 07 03 e7  	addiu	$7, $zero, 0x3e7 <array+0x7>
+     288: af c0 0f a4  	sw	$zero, 0xfa4($fp)
+     28c: 24 a6 03 e0  	addiu	$6, $5, 0x3e0 <array>
+     290: af c1 00 04  	sw	$1, 0x4($fp)
+     294: 08 00 00 a8  	j	0x2a0 <begin+0x74>
+     298: 24 42 ff ff  	addiu	$2, $2, -0x1 <array+0xfffffffffffffc1f>
+     29c: 04 40 00 3f  	bltz	$2, 0x39c <begin+0x170>
+     2a0: 00 02 08 80  	sll	$1, $2, 0x2 <quickSort.c+0x2>
+     2a4: 00 61 40 21  	addu	$8, $3, $1
+     2a8: 8d 0d 00 00  	lw	$13, 0x0($8)
+     2ac: 00 81 40 21  	addu	$8, $4, $1
+     2b0: 8d 09 00 00  	lw	$9, 0x0($8)
+     2b4: 25 2c ff ff  	addiu	$12, $9, -0x1 <array+0xfffffffffffffc1f>
+     2b8: 01 ac 08 2a  	slt	$1, $13, $12
+     2bc: 10 20 ff f6  	beqz	$1, 0x298 <begin+0x6c>
+     2c0: 10 47 00 36  	beq	$2, $7, 0x39c <begin+0x170>
+     2c4: 00 0d 08 80  	sll	$1, $13, 0x2 <quickSort.c+0x2>
+     2c8: 00 c1 08 21  	addu	$1, $6, $1
+     2cc: 8c 2a 00 00  	lw	$10, 0x0($1)
+     2d0: 08 00 00 b8  	j	0x2e0 <begin+0xb4>
+     2d4: 25 ed ff ff  	addiu	$13, $15, -0x1 <array+0xfffffffffffffc1f>
+     2d8: 01 ac 08 2a  	slt	$1, $13, $12
+     2dc: 10 20 00 25  	beqz	$1, 0x374 <begin+0x148>
+     2e0: 00 0c 08 80  	sll	$1, $12, 0x2 <quickSort.c+0x2>
+     2e4: 24 ab 03 e0  	addiu	$11, $5, 0x3e0 <array>
+     2e8: 01 61 08 21  	addu	$1, $11, $1
+     2ec: 01 80 58 25  	move	$11, $12
+     2f0: 24 38 00 04  	addiu	$24, $1, 0x4 <quickSort.c+0x4>
+     2f4: 8f 0c ff fc  	lw	$12, -0x4($24)
+     2f8: 01 ab 78 2a  	slt	$15, $13, $11
+     2fc: 27 0e ff fc  	addiu	$14, $24, -0x4 <array+0xfffffffffffffc1c>
+     300: 25 6b ff ff  	addiu	$11, $11, -0x1 <array+0xfffffffffffffc1f>
+     304: 11 e0 00 03  	beqz	$15, 0x314 <begin+0xe8>
+     308: 01 8a 08 2a  	slt	$1, $12, $10
+     30c: 01 c0 c0 25  	move	$24, $14
+     310: 10 20 ff f8  	beqz	$1, 0x2f4 <begin+0xc8>
+     314: 11 e0 00 06  	beqz	$15, 0x330 <begin+0x104>
+     318: 00 0d 08 80  	sll	$1, $13, 0x2 <quickSort.c+0x2>
+     31c: 24 af 03 e0  	addiu	$15, $5, 0x3e0 <array>
+     320: 01 e1 08 21  	addu	$1, $15, $1
+     324: 25 af 00 01  	addiu	$15, $13, 0x1 <quickSort.c+0x1>
+     328: ac 2c 00 00  	sw	$12, 0x0($1)
+     32c: 08 00 00 cd  	j	0x334 <begin+0x108>
+     330: 01 a0 78 25  	move	$15, $13
+     334: 00 0f 08 80  	sll	$1, $15, 0x2 <quickSort.c+0x2>
+     338: 24 ad 03 e0  	addiu	$13, $5, 0x3e0 <array>
+     33c: 25 6c 00 01  	addiu	$12, $11, 0x1 <quickSort.c+0x1>
+     340: 01 a1 80 21  	addu	$16, $13, $1
+     344: 8e 0d 00 00  	lw	$13, 0x0($16)
+     348: 01 ec c8 2a  	slt	$25, $15, $12
+     34c: 26 18 00 04  	addiu	$24, $16, 0x4 <quickSort.c+0x4>
+     350: 25 ef 00 01  	addiu	$15, $15, 0x1 <quickSort.c+0x1>
+     354: 13 20 00 03  	beqz	$25, 0x364 <begin+0x138>
+     358: 01 4d 08 2a  	slt	$1, $10, $13
+     35c: 03 00 80 25  	move	$16, $24
+     360: 10 20 ff f8  	beqz	$1, 0x344 <begin+0x118>
+     364: 13 20 ff db  	beqz	$25, 0x2d4 <begin+0xa8>
+     368: 01 60 60 25  	move	$12, $11
+     36c: ad cd 00 00  	sw	$13, 0x0($14)
+     370: 08 00 00 b5  	j	0x2d4 <begin+0xa8>
+     374: 24 42 00 01  	addiu	$2, $2, 0x1 <quickSort.c+0x1>
+     378: af 0a ff fc  	sw	$10, -0x4($24)
+     37c: 00 02 08 80  	sll	$1, $2, 0x2 <quickSort.c+0x2>
+     380: 00 81 50 21  	addu	$10, $4, $1
+     384: 00 61 08 21  	addu	$1, $3, $1
+     388: ac 2f 00 00  	sw	$15, 0x0($1)
+     38c: 25 e1 ff ff  	addiu	$1, $15, -0x1 <array+0xfffffffffffffc1f>
+     390: ad 49 00 00  	sw	$9, 0x0($10)
+     394: ad 01 00 00  	sw	$1, 0x0($8)
+     398: 04 41 ff c1  	bgez	$2, 0x2a0 <begin+0x74>
+     39c: 3c 01 00 00  	lui	$1, 0x0 <quickSort.c>
+     3a0: 24 03 00 29  	addiu	$3, $zero, 0x29 <quickSort.c+0x29>
+     3a4: 24 21 03 e0  	addiu	$1, $1, 0x3e0 <array>
+     3a8: 8c 22 00 30  	lw	$2, 0x30($1)
+     3ac: 14 43 00 02  	bne	$2, $3, 0x3b8 <begin+0x18c>
+     3b0: 40 83 c8 00  	mtc0	$3, $25, 0x0 <quickSort.c>
+     3b4: 08 00 00 ef  	j	0x3bc <begin+0x190>
+     3b8: 40 82 c0 00  	mtc0	$2, $24, 0x0 <quickSort.c>
+     3bc: 03 c0 e8 25  	move	$sp, $fp
+     3c0: 8f b0 1f 44  	lw	$16, 0x1f44($sp)
+     3c4: 8f be 1f 48  	lw	$fp, 0x1f48($sp)
+     3c8: 8f bf 1f 4c  	lw	$ra, 0x1f4c($sp)
+     3cc: 27 bd 1f 50  	addiu	$sp, $sp, 0x1f50 <array+0x1b70>
+     3d0: 03 e0 00 08  	jr	$ra

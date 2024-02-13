@@ -1,0 +1,12 @@
+cse148/hexfiles_nodelay/coin.pc.txt.gz filter=lfs diff=lfs merge=lfs -text
+cse148/hexfiles_nodelay/esift2.pc.txt.gz filter=lfs diff=lfs merge=lfs -text
+cse148/hexfiles_nodelay/esift2.wb.txt.gz filter=lfs diff=lfs merge=lfs -text
+cse148/hexfiles_nodelay/nqueens.pc.txt.gz filter=lfs diff=lfs merge=lfs -text
+cse148/hexfiles_nodelay/nqueens.wb.txt.gz filter=lfs diff=lfs merge=lfs -text
+cse148/hexfiles_nodelay/quickSort.ls.txt.gz filter=lfs diff=lfs merge=lfs -text
+cse148/hexfiles_nodelay/quickSort.pc.txt.gz filter=lfs diff=lfs merge=lfs -text
+cse148/hexfiles_nodelay/coin.ls.txt.gz filter=lfs diff=lfs merge=lfs -text
+cse148/hexfiles_nodelay/quickSort.wb.txt.gz filter=lfs diff=lfs merge=lfs -text
+cse148/hexfiles_nodelay/esift2.ls.txt.gz filter=lfs diff=lfs merge=lfs -text
+cse148/hexfiles_nodelay/nqueens.ls.txt.gz filter=lfs diff=lfs merge=lfs -text
+cse148/hexfiles_nodelay/coin.wb.txt.gz filter=lfs diff=lfs merge=lfs -text

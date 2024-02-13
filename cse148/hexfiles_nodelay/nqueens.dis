@@ -1,0 +1,386 @@
+
+nqueens.out:	file format elf32-mips
+
+Disassembly of section .text:
+
+00000030 <__start>:
+      30: 24 00 00 00  	addiu	$zero, $zero, 0x0 <nqueens.c>
+      34: 24 01 00 00  	addiu	$1, $zero, 0x0 <nqueens.c>
+      38: 24 02 00 00  	addiu	$2, $zero, 0x0 <nqueens.c>
+      3c: 24 03 00 00  	addiu	$3, $zero, 0x0 <nqueens.c>
+      40: 24 04 00 00  	addiu	$4, $zero, 0x0 <nqueens.c>
+      44: 24 05 00 00  	addiu	$5, $zero, 0x0 <nqueens.c>
+      48: 24 06 00 00  	addiu	$6, $zero, 0x0 <nqueens.c>
+      4c: 24 07 00 00  	addiu	$7, $zero, 0x0 <nqueens.c>
+      50: 24 08 00 00  	addiu	$8, $zero, 0x0 <nqueens.c>
+      54: 24 09 00 00  	addiu	$9, $zero, 0x0 <nqueens.c>
+      58: 24 0a 00 00  	addiu	$10, $zero, 0x0 <nqueens.c>
+      5c: 24 0b 00 00  	addiu	$11, $zero, 0x0 <nqueens.c>
+      60: 24 0c 00 00  	addiu	$12, $zero, 0x0 <nqueens.c>
+      64: 24 0d 00 00  	addiu	$13, $zero, 0x0 <nqueens.c>
+      68: 24 0e 00 00  	addiu	$14, $zero, 0x0 <nqueens.c>
+      6c: 24 0f 00 00  	addiu	$15, $zero, 0x0 <nqueens.c>
+      70: 24 10 00 00  	addiu	$16, $zero, 0x0 <nqueens.c>
+      74: 24 11 00 00  	addiu	$17, $zero, 0x0 <nqueens.c>
+      78: 24 12 00 00  	addiu	$18, $zero, 0x0 <nqueens.c>
+      7c: 24 13 00 00  	addiu	$19, $zero, 0x0 <nqueens.c>
+      80: 24 14 00 00  	addiu	$20, $zero, 0x0 <nqueens.c>
+      84: 24 15 00 00  	addiu	$21, $zero, 0x0 <nqueens.c>
+      88: 24 16 00 00  	addiu	$22, $zero, 0x0 <nqueens.c>
+      8c: 24 17 00 00  	addiu	$23, $zero, 0x0 <nqueens.c>
+      90: 24 18 00 00  	addiu	$24, $zero, 0x0 <nqueens.c>
+      94: 24 19 00 00  	addiu	$25, $zero, 0x0 <nqueens.c>
+      98: 24 1a 00 00  	addiu	$26, $zero, 0x0 <nqueens.c>
+      9c: 24 1b 00 00  	addiu	$27, $zero, 0x0 <nqueens.c>
+      a0: 24 1c 00 00  	addiu	$gp, $zero, 0x0 <nqueens.c>
+      a4: 24 1d 00 00  	addiu	$sp, $zero, 0x0 <nqueens.c>
+      a8: 24 1e 00 00  	addiu	$fp, $zero, 0x0 <nqueens.c>
+      ac: 24 1f 00 00  	addiu	$ra, $zero, 0x0 <nqueens.c>
+      b0: 3c 1d 00 10  	lui	$sp, 0x10 <nqueens.c+0x10>
+      b4: 0c 00 00 b8  	jal	0x2e0 <begin>
+      b8: 00 00 00 00  	nop <nqueens.c>
+      bc: 03 80 e0 25  	move	$gp, $gp
+      c0: 40 9c b8 00  	mtc0	$gp, $23, 0x0 <nqueens.c>
+      c4: 00 00 00 00  	nop <nqueens.c>
+      c8: 40 9c c8 00  	mtc0	$gp, $25, 0x0 <nqueens.c>
+      cc: 08 00 00 33  	j	0xcc <__start+0x9c>
+      d0: 00 00 00 00  	nop <nqueens.c>
+      d4: 00 00 00 00  	nop <nqueens.c>
+      d8: 04 17 00 01  	<unknown>
+      dc: 04 17 00 01  	<unknown>
+
+000000e0 <print_uart>:
+      e0: 90 82 00 00  	lbu	$2, 0x0($4)
+      e4: 10 40 00 11  	beqz	$2, 0x12c <print_uart+0x4c>
+      e8: 27 bd ff f8  	addiu	$sp, $sp, -0x8 <nqueens.c+0xfffffffffffffff8>
+      ec: af bf 00 04  	sw	$ra, 0x4($sp)
+      f0: af be 00 00  	sw	$fp, 0x0($sp)
+      f4: 03 a0 f0 25  	move	$fp, $sp
+      f8: 24 03 3f fc  	addiu	$3, $zero, 0x3ffc <nqueens.c+0x3ffc>
+      fc: 8c 61 00 00  	lw	$1, 0x0($3)
+     100: 30 21 01 00  	andi	$1, $1, 0x100 <print_uart+0x20>
+     104: 14 20 ff fd  	bnez	$1, 0xfc <print_uart+0x1c>
+     108: a0 62 00 00  	sb	$2, 0x0($3)
+     10c: 24 81 00 01  	addiu	$1, $4, 0x1 <nqueens.c+0x1>
+     110: 90 82 00 01  	lbu	$2, 0x1($4)
+     114: 00 20 20 25  	move	$4, $1
+     118: 14 40 ff f8  	bnez	$2, 0xfc <print_uart+0x1c>
+     11c: 03 c0 e8 25  	move	$sp, $fp
+     120: 8f bf 00 04  	lw	$ra, 0x4($sp)
+     124: 8f be 00 00  	lw	$fp, 0x0($sp)
+     128: 27 bd 00 08  	addiu	$sp, $sp, 0x8 <nqueens.c+0x8>
+     12c: 03 e0 00 08  	jr	$ra
+
+00000130 <putc_uart>:
+     130: 27 bd ff f8  	addiu	$sp, $sp, -0x8 <nqueens.c+0xfffffffffffffff8>
+     134: af bf 00 04  	sw	$ra, 0x4($sp)
+     138: af be 00 00  	sw	$fp, 0x0($sp)
+     13c: 03 a0 f0 25  	move	$fp, $sp
+     140: 24 02 3f fc  	addiu	$2, $zero, 0x3ffc <nqueens.c+0x3ffc>
+     144: 8c 41 00 00  	lw	$1, 0x0($2)
+     148: 30 21 01 00  	andi	$1, $1, 0x100 <print_uart+0x20>
+     14c: 14 20 ff fd  	bnez	$1, 0x144 <putc_uart+0x14>
+     150: 24 01 3f fc  	addiu	$1, $zero, 0x3ffc <nqueens.c+0x3ffc>
+     154: a0 24 00 00  	sb	$4, 0x0($1)
+     158: 03 c0 e8 25  	move	$sp, $fp
+     15c: 8f be 00 00  	lw	$fp, 0x0($sp)
+     160: 8f bf 00 04  	lw	$ra, 0x4($sp)
+     164: 27 bd 00 08  	addiu	$sp, $sp, 0x8 <nqueens.c+0x8>
+     168: 03 e0 00 08  	jr	$ra
+
+0000016c <print>:
+     16c: 27 bd ff f8  	addiu	$sp, $sp, -0x8 <nqueens.c+0xfffffffffffffff8>
+     170: af bf 00 04  	sw	$ra, 0x4($sp)
+     174: af be 00 00  	sw	$fp, 0x0($sp)
+     178: 03 a0 f0 25  	move	$fp, $sp
+     17c: 90 82 00 00  	lbu	$2, 0x0($4)
+     180: 10 40 00 07  	beqz	$2, 0x1a0 <print+0x34>
+     184: 24 84 00 01  	addiu	$4, $4, 0x1 <nqueens.c+0x1>
+     188: 24 03 3f f0  	addiu	$3, $zero, 0x3ff0 <nqueens.c+0x3ff0>
+     18c: a0 62 00 00  	sb	$2, 0x0($3)
+     190: 24 81 00 01  	addiu	$1, $4, 0x1 <nqueens.c+0x1>
+     194: 90 82 00 00  	lbu	$2, 0x0($4)
+     198: 00 20 20 25  	move	$4, $1
+     19c: 14 40 ff fb  	bnez	$2, 0x18c <print+0x20>
+     1a0: 24 01 3f f0  	addiu	$1, $zero, 0x3ff0 <nqueens.c+0x3ff0>
+     1a4: a0 20 00 00  	sb	$zero, 0x0($1)
+     1a8: 03 c0 e8 25  	move	$sp, $fp
+     1ac: 8f be 00 00  	lw	$fp, 0x0($sp)
+     1b0: 8f bf 00 04  	lw	$ra, 0x4($sp)
+     1b4: 27 bd 00 08  	addiu	$sp, $sp, 0x8 <nqueens.c+0x8>
+     1b8: 03 e0 00 08  	jr	$ra
+
+000001bc <print_char>:
+     1bc: 27 bd ff f8  	addiu	$sp, $sp, -0x8 <nqueens.c+0xfffffffffffffff8>
+     1c0: af bf 00 04  	sw	$ra, 0x4($sp)
+     1c4: af be 00 00  	sw	$fp, 0x0($sp)
+     1c8: 03 a0 f0 25  	move	$fp, $sp
+     1cc: 24 01 3f f0  	addiu	$1, $zero, 0x3ff0 <nqueens.c+0x3ff0>
+     1d0: a0 24 00 00  	sb	$4, 0x0($1)
+     1d4: 03 c0 e8 25  	move	$sp, $fp
+     1d8: 8f be 00 00  	lw	$fp, 0x0($sp)
+     1dc: 8f bf 00 04  	lw	$ra, 0x4($sp)
+     1e0: 27 bd 00 08  	addiu	$sp, $sp, 0x8 <nqueens.c+0x8>
+     1e4: 03 e0 00 08  	jr	$ra
+
+000001e8 <print_num>:
+     1e8: 27 bd ff f8  	addiu	$sp, $sp, -0x8 <nqueens.c+0xfffffffffffffff8>
+     1ec: af bf 00 04  	sw	$ra, 0x4($sp)
+     1f0: af be 00 00  	sw	$fp, 0x0($sp)
+     1f4: 03 a0 f0 25  	move	$fp, $sp
+     1f8: 3c 01 10 62  	lui	$1, 0x1062 <nqueens.c+0x1062>
+     1fc: 24 02 3f fc  	addiu	$2, $zero, 0x3ffc <nqueens.c+0x3ffc>
+     200: 34 21 4d d3  	ori	$1, $1, 0x4dd3 <nqueens.c+0x4dd3>
+     204: 00 81 00 19  	multu	$4, $1
+     208: 00 00 08 10  	mfhi	$1
+     20c: 00 01 19 82  	srl	$3, $1, 0x6 <nqueens.c+0x6>
+     210: 8c 41 00 00  	lw	$1, 0x0($2)
+     214: 30 21 01 00  	andi	$1, $1, 0x100 <print_uart+0x20>
+     218: 14 20 ff fd  	bnez	$1, 0x210 <print_num+0x28>
+     21c: 24 01 fc 18  	addiu	$1, $zero, -0x3e8 <nqueens.c+0xfffffffffffffc18>
+     220: 70 61 08 02  	mul	$1, $3, $1
+     224: 24 63 00 30  	addiu	$3, $3, 0x30 <__start>
+     228: 00 24 10 21  	addu	$2, $1, $4
+     22c: 3c 01 51 eb  	lui	$1, 0x51eb <nqueens.c+0x51eb>
+     230: 24 04 3f fc  	addiu	$4, $zero, 0x3ffc <nqueens.c+0x3ffc>
+     234: 34 21 85 1f  	ori	$1, $1, 0x851f <nqueens.c+0x851f>
+     238: a0 83 00 00  	sb	$3, 0x0($4)
+     23c: 00 41 00 19  	multu	$2, $1
+     240: 00 00 08 10  	mfhi	$1
+     244: 00 01 19 42  	srl	$3, $1, 0x5 <nqueens.c+0x5>
+     248: 8c 81 00 00  	lw	$1, 0x0($4)
+     24c: 30 21 01 00  	andi	$1, $1, 0x100 <print_uart+0x20>
+     250: 14 20 ff fd  	bnez	$1, 0x248 <print_num+0x60>
+     254: 00 03 08 80  	sll	$1, $3, 0x2 <nqueens.c+0x2>
+     258: 00 03 21 40  	sll	$4, $3, 0x5 <nqueens.c+0x5>
+     25c: 00 81 08 23  	subu	$1, $4, $1
+     260: 00 03 21 c0  	sll	$4, $3, 0x7 <nqueens.c+0x7>
+     264: 24 63 00 30  	addiu	$3, $3, 0x30 <__start>
+     268: 00 24 08 23  	subu	$1, $1, $4
+     26c: 24 04 3f fc  	addiu	$4, $zero, 0x3ffc <nqueens.c+0x3ffc>
+     270: 00 22 10 21  	addu	$2, $1, $2
+     274: 3c 01 cc cc  	lui	$1, 0xcccc <nqueens.c+0xcccc>
+     278: a0 83 00 00  	sb	$3, 0x0($4)
+     27c: 34 21 cc cd  	ori	$1, $1, 0xcccd <nqueens.c+0xcccd>
+     280: 00 41 00 19  	multu	$2, $1
+     284: 00 00 08 10  	mfhi	$1
+     288: 00 01 18 c2  	srl	$3, $1, 0x3 <nqueens.c+0x3>
+     28c: 8c 81 00 00  	lw	$1, 0x0($4)
+     290: 30 21 01 00  	andi	$1, $1, 0x100 <print_uart+0x20>
+     294: 14 20 ff fd  	bnez	$1, 0x28c <print_num+0xa4>
+     298: 24 04 3f fc  	addiu	$4, $zero, 0x3ffc <nqueens.c+0x3ffc>
+     29c: 24 61 00 30  	addiu	$1, $3, 0x30 <__start>
+     2a0: a0 81 00 00  	sb	$1, 0x0($4)
+     2a4: 8c 81 00 00  	lw	$1, 0x0($4)
+     2a8: 30 21 01 00  	andi	$1, $1, 0x100 <print_uart+0x20>
+     2ac: 14 20 ff fd  	bnez	$1, 0x2a4 <print_num+0xbc>
+     2b0: 00 03 08 40  	sll	$1, $3, 0x1 <nqueens.c+0x1>
+     2b4: 00 03 18 c0  	sll	$3, $3, 0x3 <nqueens.c+0x3>
+     2b8: 00 61 08 21  	addu	$1, $3, $1
+     2bc: 00 41 08 23  	subu	$1, $2, $1
+     2c0: 24 02 3f fc  	addiu	$2, $zero, 0x3ffc <nqueens.c+0x3ffc>
+     2c4: 24 21 00 30  	addiu	$1, $1, 0x30 <__start>
+     2c8: a0 41 00 00  	sb	$1, 0x0($2)
+     2cc: 03 c0 e8 25  	move	$sp, $fp
+     2d0: 8f be 00 00  	lw	$fp, 0x0($sp)
+     2d4: 8f bf 00 04  	lw	$ra, 0x4($sp)
+     2d8: 27 bd 00 08  	addiu	$sp, $sp, 0x8 <nqueens.c+0x8>
+     2dc: 03 e0 00 08  	jr	$ra
+
+000002e0 <begin>:
+     2e0: 27 bd ff e8  	addiu	$sp, $sp, -0x18 <nqueens.c+0xffffffffffffffe8>
+     2e4: af bf 00 14  	sw	$ra, 0x14($sp)
+     2e8: af be 00 10  	sw	$fp, 0x10($sp)
+     2ec: 03 a0 f0 25  	move	$fp, $sp
+     2f0: 24 01 00 09  	addiu	$1, $zero, 0x9 <nqueens.c+0x9>
+     2f4: 24 04 00 09  	addiu	$4, $zero, 0x9 <nqueens.c+0x9>
+     2f8: 0c 00 00 c6  	jal	0x318 <SolveProblem>
+     2fc: af 81 80 18  	sw	$1, -0x7fe8($gp)
+     300: 24 02 00 00  	addiu	$2, $zero, 0x0 <nqueens.c>
+     304: 03 c0 e8 25  	move	$sp, $fp
+     308: 8f be 00 10  	lw	$fp, 0x10($sp)
+     30c: 8f bf 00 14  	lw	$ra, 0x14($sp)
+     310: 27 bd 00 18  	addiu	$sp, $sp, 0x18 <nqueens.c+0x18>
+     314: 03 e0 00 08  	jr	$ra
+
+00000318 <SolveProblem>:
+     318: 27 bd fb 30  	addiu	$sp, $sp, -0x4d0 <nqueens.c+0xfffffffffffffb30>
+     31c: af bf 04 cc  	sw	$ra, 0x4cc($sp)
+     320: af be 04 c8  	sw	$fp, 0x4c8($sp)
+     324: af b5 04 c4  	sw	$21, 0x4c4($sp)
+     328: af b4 04 c0  	sw	$20, 0x4c0($sp)
+     32c: af b3 04 bc  	sw	$19, 0x4bc($sp)
+     330: af b2 04 b8  	sw	$18, 0x4b8($sp)
+     334: af b1 04 b4  	sw	$17, 0x4b4($sp)
+     338: af b0 04 b0  	sw	$16, 0x4b0($sp)
+     33c: 03 a0 f0 25  	move	$fp, $sp
+     340: 24 03 00 00  	addiu	$3, $zero, 0x0 <nqueens.c>
+     344: 27 c2 00 00  	addiu	$2, $fp, 0x0 <nqueens.c>
+     348: 24 05 04 b0  	addiu	$5, $zero, 0x4b0 <SolveProblem+0x198>
+     34c: 00 43 08 21  	addu	$1, $2, $3
+     350: 24 63 00 0c  	addiu	$3, $3, 0xc <nqueens.c+0xc>
+     354: ac 20 00 08  	sw	$zero, 0x8($1)
+     358: ac 20 00 04  	sw	$zero, 0x4($1)
+     35c: ac 20 00 00  	sw	$zero, 0x0($1)
+     360: 14 65 ff fa  	bne	$3, $5, 0x34c <SolveProblem+0x34>
+     364: 24 05 00 00  	addiu	$5, $zero, 0x0 <nqueens.c>
+     368: 18 80 00 93  	blez	$4, 0x5b8 <SolveProblem+0x2a0>
+     36c: 3c 01 00 00  	lui	$1, 0x0 <nqueens.c>
+     370: 24 83 ff ff  	addiu	$3, $4, -0x1 <nqueens.c+0xffffffffffffffff>
+     374: 24 07 ff ff  	addiu	$7, $zero, -0x1 <nqueens.c+0xffffffffffffffff>
+     378: 24 21 06 00  	addiu	$1, $1, 0x600 <nqueens.c+0x600>
+     37c: 00 60 40 25  	move	$8, $3
+     380: 24 26 00 04  	addiu	$6, $1, 0x4 <nqueens.c+0x4>
+     384: ac c8 00 00  	sw	$8, 0x0($6)
+     388: ac c0 ff fc  	sw	$zero, -0x4($6)
+     38c: 24 c6 00 08  	addiu	$6, $6, 0x8 <nqueens.c+0x8>
+     390: 25 08 ff ff  	addiu	$8, $8, -0x1 <nqueens.c+0xffffffffffffffff>
+     394: 15 07 ff fb  	bne	$8, $7, 0x384 <SolveProblem+0x6c>
+     398: 04 60 00 87  	bltz	$3, 0x5b8 <SolveProblem+0x2a0>
+     39c: 00 04 08 80  	sll	$1, $4, 0x2 <nqueens.c+0x2>
+     3a0: 00 04 28 c0  	sll	$5, $4, 0x3 <nqueens.c+0x3>
+     3a4: 3c 0b 00 00  	lui	$11, 0x0 <nqueens.c>
+     3a8: 3c 0d 00 00  	lui	$13, 0x0 <nqueens.c>
+     3ac: 00 64 30 21  	addu	$6, $3, $4
+     3b0: 24 48 00 04  	addiu	$8, $2, 0x4 <nqueens.c+0x4>
+     3b4: 24 49 00 20  	addiu	$9, $2, 0x20 <nqueens.c+0x20>
+     3b8: 24 4a 00 08  	addiu	$10, $2, 0x8 <nqueens.c+0x8>
+     3bc: 24 19 ff ff  	addiu	$25, $zero, -0x1 <nqueens.c+0xffffffffffffffff>
+     3c0: 24 0f 00 01  	addiu	$15, $zero, 0x1 <nqueens.c+0x1>
+     3c4: 00 60 c0 25  	move	$24, $3
+     3c8: 00 a1 08 21  	addu	$1, $5, $1
+     3cc: 24 05 00 00  	addiu	$5, $zero, 0x0 <nqueens.c>
+     3d0: 25 6c 06 00  	addiu	$12, $11, 0x600 <nqueens.c+0x600>
+     3d4: 25 ae 08 88  	addiu	$14, $13, 0x888 <nqueens.c+0x888>
+     3d8: 00 22 08 21  	addu	$1, $1, $2
+     3dc: 24 27 ff f4  	addiu	$7, $1, -0xc <nqueens.c+0xfffffffffffffff4>
+     3e0: 08 00 01 0f  	j	0x43c <SolveProblem+0x124>
+     3e4: 24 a5 00 01  	addiu	$5, $5, 0x1 <nqueens.c+0x1>
+     3e8: 40 85 b8 00  	mtc0	$5, $23, 0x0 <nqueens.c>
+     3ec: 8e 41 00 00  	lw	$1, 0x0($18)
+     3f0: 00 01 c8 80  	sll	$25, $1, 0x2 <nqueens.c+0x2>
+     3f4: 00 01 80 c0  	sll	$16, $1, 0x3 <nqueens.c+0x3>
+     3f8: 02 19 c8 21  	addu	$25, $16, $25
+     3fc: 00 59 c8 21  	addu	$25, $2, $25
+     400: af 20 00 00  	sw	$zero, 0x0($25)
+     404: 00 23 c8 21  	addu	$25, $1, $3
+     408: 00 c1 08 23  	subu	$1, $6, $1
+     40c: 00 19 80 80  	sll	$16, $25, 0x2 <nqueens.c+0x2>
+     410: 00 19 c8 c0  	sll	$25, $25, 0x3 <nqueens.c+0x3>
+     414: 03 30 c8 21  	addu	$25, $25, $16
+     418: 00 59 c8 21  	addu	$25, $2, $25
+     41c: af 20 00 04  	sw	$zero, 0x4($25)
+     420: 00 01 c8 80  	sll	$25, $1, 0x2 <nqueens.c+0x2>
+     424: 00 01 08 c0  	sll	$1, $1, 0x3 <nqueens.c+0x3>
+     428: 00 39 08 21  	addu	$1, $1, $25
+     42c: 02 20 c8 25  	move	$25, $17
+     430: 00 41 08 21  	addu	$1, $2, $1
+     434: ac 20 00 08  	sw	$zero, 0x8($1)
+     438: 07 00 00 5f  	bltz	$24, 0x5b8 <SolveProblem+0x2a0>
+     43c: 00 18 08 c0  	sll	$1, $24, 0x3 <nqueens.c+0x3>
+     440: 01 81 90 21  	addu	$18, $12, $1
+     444: 8e 50 00 00  	lw	$16, 0x0($18)
+     448: 07 20 00 21  	bltz	$25, 0x4d0 <SolveProblem+0x1b8>
+     44c: 03 30 08 2a  	slt	$1, $25, $16
+     450: 14 20 00 1d  	bnez	$1, 0x4c8 <SolveProblem+0x1b0>
+     454: 00 99 08 21  	addu	$1, $4, $25
+     458: 00 01 88 80  	sll	$17, $1, 0x2 <nqueens.c+0x2>
+     45c: 00 01 08 c0  	sll	$1, $1, 0x3 <nqueens.c+0x3>
+     460: 00 31 08 21  	addu	$1, $1, $17
+     464: 01 41 98 21  	addu	$19, $10, $1
+     468: 00 19 08 80  	sll	$1, $25, 0x2 <nqueens.c+0x2>
+     46c: 01 c1 a0 21  	addu	$20, $14, $1
+     470: 8e 81 00 00  	lw	$1, 0x0($20)
+     474: 00 01 88 80  	sll	$17, $1, 0x2 <nqueens.c+0x2>
+     478: 00 01 a8 c0  	sll	$21, $1, 0x3 <nqueens.c+0x3>
+     47c: 03 21 08 21  	addu	$1, $25, $1
+     480: 02 b1 88 21  	addu	$17, $21, $17
+     484: 00 51 a8 21  	addu	$21, $2, $17
+     488: ae a0 00 00  	sw	$zero, 0x0($21)
+     48c: 00 01 a8 80  	sll	$21, $1, 0x2 <nqueens.c+0x2>
+     490: 00 01 08 c0  	sll	$1, $1, 0x3 <nqueens.c+0x3>
+     494: 00 35 08 21  	addu	$1, $1, $21
+     498: 00 41 08 21  	addu	$1, $2, $1
+     49c: ac 20 00 04  	sw	$zero, 0x4($1)
+     4a0: 02 71 08 23  	subu	$1, $19, $17
+     4a4: 27 31 ff ff  	addiu	$17, $25, -0x1 <nqueens.c+0xffffffffffffffff>
+     4a8: ac 20 00 00  	sw	$zero, 0x0($1)
+     4ac: 13 20 00 09  	beqz	$25, 0x4d4 <SolveProblem+0x1bc>
+     4b0: 02 19 08 2a  	slt	$1, $16, $25
+     4b4: 26 73 ff f4  	addiu	$19, $19, -0xc <nqueens.c+0xfffffffffffffff4>
+     4b8: 26 94 ff fc  	addiu	$20, $20, -0x4 <nqueens.c+0xfffffffffffffffc>
+     4bc: 02 20 c8 25  	move	$25, $17
+     4c0: 14 20 ff eb  	bnez	$1, 0x470 <SolveProblem+0x158>
+     4c4: 08 00 01 35  	j	0x4d4 <SolveProblem+0x1bc>
+     4c8: 03 20 88 25  	move	$17, $25
+     4cc: 08 00 01 35  	j	0x4d4 <SolveProblem+0x1bc>
+     4d0: 03 20 88 25  	move	$17, $25
+     4d4: 8e 41 00 04  	lw	$1, 0x4($18)
+     4d8: 26 39 00 01  	addiu	$25, $17, 0x1 <nqueens.c+0x1>
+     4dc: 25 b2 08 88  	addiu	$18, $13, 0x888 <nqueens.c+0x888>
+     4e0: 27 18 ff ff  	addiu	$24, $24, -0x1 <nqueens.c+0xffffffffffffffff>
+     4e4: 00 19 98 80  	sll	$19, $25, 0x2 <nqueens.c+0x2>
+     4e8: 02 53 90 21  	addu	$18, $18, $19
+     4ec: 00 01 98 80  	sll	$19, $1, 0x2 <nqueens.c+0x2>
+     4f0: 00 01 a0 c0  	sll	$20, $1, 0x3 <nqueens.c+0x3>
+     4f4: 02 93 98 21  	addu	$19, $20, $19
+     4f8: ae 41 00 00  	sw	$1, 0x0($18)
+     4fc: 00 53 98 21  	addu	$19, $2, $19
+     500: ae 6f 00 00  	sw	$15, 0x0($19)
+     504: 00 30 98 21  	addu	$19, $1, $16
+     508: 00 13 a0 80  	sll	$20, $19, 0x2 <nqueens.c+0x2>
+     50c: 00 13 98 c0  	sll	$19, $19, 0x3 <nqueens.c+0x3>
+     510: 02 74 98 21  	addu	$19, $19, $20
+     514: 00 53 98 21  	addu	$19, $2, $19
+     518: ae 6f 00 04  	sw	$15, 0x4($19)
+     51c: 02 04 98 21  	addu	$19, $16, $4
+     520: 02 61 08 23  	subu	$1, $19, $1
+     524: 00 01 a0 80  	sll	$20, $1, 0x2 <nqueens.c+0x2>
+     528: 00 01 08 c0  	sll	$1, $1, 0x3 <nqueens.c+0x3>
+     52c: 00 34 08 21  	addu	$1, $1, $20
+     530: 00 41 08 21  	addu	$1, $2, $1
+     534: ac 2f 00 08  	sw	$15, 0x8($1)
+     538: 13 23 ff aa  	beq	$25, $3, 0x3e4 <SolveProblem+0xcc>
+     53c: 18 80 ff be  	blez	$4, 0x438 <SolveProblem+0x120>
+     540: 00 13 08 80  	sll	$1, $19, 0x2 <nqueens.c+0x2>
+     544: 00 13 88 c0  	sll	$17, $19, 0x3 <nqueens.c+0x3>
+     548: 00 10 90 c0  	sll	$18, $16, 0x3 <nqueens.c+0x3>
+     54c: 00 e0 98 25  	move	$19, $7
+     550: 00 80 a0 25  	move	$20, $4
+     554: 02 21 08 21  	addu	$1, $17, $1
+     558: 01 01 88 21  	addu	$17, $8, $1
+     55c: 00 10 08 80  	sll	$1, $16, 0x2 <nqueens.c+0x2>
+     560: 26 10 00 01  	addiu	$16, $16, 0x1 <nqueens.c+0x1>
+     564: 02 41 08 21  	addu	$1, $18, $1
+     568: 01 21 90 21  	addu	$18, $9, $1
+     56c: 08 00 01 60  	j	0x580 <SolveProblem+0x268>
+     570: 26 73 ff f4  	addiu	$19, $19, -0xc <nqueens.c+0xfffffffffffffff4>
+     574: 26 31 ff f4  	addiu	$17, $17, -0xc <nqueens.c+0xfffffffffffffff4>
+     578: 26 52 00 0c  	addiu	$18, $18, 0xc <nqueens.c+0xc>
+     57c: 1a 80 ff ae  	blez	$20, 0x438 <SolveProblem+0x120>
+     580: 8e 61 00 00  	lw	$1, 0x0($19)
+     584: 26 94 ff ff  	addiu	$20, $20, -0x1 <nqueens.c+0xffffffffffffffff>
+     588: 14 20 ff f9  	bnez	$1, 0x570 <SolveProblem+0x258>
+     58c: 8e 21 00 00  	lw	$1, 0x0($17)
+     590: 14 20 ff f7  	bnez	$1, 0x570 <SolveProblem+0x258>
+     594: 8e 41 00 00  	lw	$1, 0x0($18)
+     598: 14 20 ff f5  	bnez	$1, 0x570 <SolveProblem+0x258>
+     59c: 27 18 00 01  	addiu	$24, $24, 0x1 <nqueens.c+0x1>
+     5a0: 25 61 06 00  	addiu	$1, $11, 0x600 <nqueens.c+0x600>
+     5a4: 00 18 a8 c0  	sll	$21, $24, 0x3 <nqueens.c+0x3>
+     5a8: 00 35 08 21  	addu	$1, $1, $21
+     5ac: ac 34 00 04  	sw	$20, 0x4($1)
+     5b0: ac 30 00 00  	sw	$16, 0x0($1)
+     5b4: 08 00 01 5c  	j	0x570 <SolveProblem+0x258>
+     5b8: 40 85 c8 00  	mtc0	$5, $25, 0x0 <nqueens.c>
+     5bc: 03 c0 e8 25  	move	$sp, $fp
+     5c0: 8f b0 04 b0  	lw	$16, 0x4b0($sp)
+     5c4: 8f b1 04 b4  	lw	$17, 0x4b4($sp)
+     5c8: 8f b2 04 b8  	lw	$18, 0x4b8($sp)
+     5cc: 8f b3 04 bc  	lw	$19, 0x4bc($sp)
+     5d0: 8f b4 04 c0  	lw	$20, 0x4c0($sp)
+     5d4: 8f b5 04 c4  	lw	$21, 0x4c4($sp)
+     5d8: 8f be 04 c8  	lw	$fp, 0x4c8($sp)
+     5dc: 8f bf 04 cc  	lw	$ra, 0x4cc($sp)
+     5e0: 27 bd 04 d0  	addiu	$sp, $sp, 0x4d0 <SolveProblem+0x1b8>
+     5e4: 03 e0 00 08  	jr	$ra

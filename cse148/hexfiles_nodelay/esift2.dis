@@ -1,0 +1,122 @@
+
+esift2.out:	file format elf32-mips
+
+Disassembly of section .text:
+
+00000030 <__start>:
+      30: 24 00 00 00  	addiu	$zero, $zero, 0x0 <esift2.c>
+      34: 24 01 00 00  	addiu	$1, $zero, 0x0 <esift2.c>
+      38: 24 02 00 00  	addiu	$2, $zero, 0x0 <esift2.c>
+      3c: 24 03 00 00  	addiu	$3, $zero, 0x0 <esift2.c>
+      40: 24 04 00 00  	addiu	$4, $zero, 0x0 <esift2.c>
+      44: 24 05 00 00  	addiu	$5, $zero, 0x0 <esift2.c>
+      48: 24 06 00 00  	addiu	$6, $zero, 0x0 <esift2.c>
+      4c: 24 07 00 00  	addiu	$7, $zero, 0x0 <esift2.c>
+      50: 24 08 00 00  	addiu	$8, $zero, 0x0 <esift2.c>
+      54: 24 09 00 00  	addiu	$9, $zero, 0x0 <esift2.c>
+      58: 24 0a 00 00  	addiu	$10, $zero, 0x0 <esift2.c>
+      5c: 24 0b 00 00  	addiu	$11, $zero, 0x0 <esift2.c>
+      60: 24 0c 00 00  	addiu	$12, $zero, 0x0 <esift2.c>
+      64: 24 0d 00 00  	addiu	$13, $zero, 0x0 <esift2.c>
+      68: 24 0e 00 00  	addiu	$14, $zero, 0x0 <esift2.c>
+      6c: 24 0f 00 00  	addiu	$15, $zero, 0x0 <esift2.c>
+      70: 24 10 00 00  	addiu	$16, $zero, 0x0 <esift2.c>
+      74: 24 11 00 00  	addiu	$17, $zero, 0x0 <esift2.c>
+      78: 24 12 00 00  	addiu	$18, $zero, 0x0 <esift2.c>
+      7c: 24 13 00 00  	addiu	$19, $zero, 0x0 <esift2.c>
+      80: 24 14 00 00  	addiu	$20, $zero, 0x0 <esift2.c>
+      84: 24 15 00 00  	addiu	$21, $zero, 0x0 <esift2.c>
+      88: 24 16 00 00  	addiu	$22, $zero, 0x0 <esift2.c>
+      8c: 24 17 00 00  	addiu	$23, $zero, 0x0 <esift2.c>
+      90: 24 18 00 00  	addiu	$24, $zero, 0x0 <esift2.c>
+      94: 24 19 00 00  	addiu	$25, $zero, 0x0 <esift2.c>
+      98: 24 1a 00 00  	addiu	$26, $zero, 0x0 <esift2.c>
+      9c: 24 1b 00 00  	addiu	$27, $zero, 0x0 <esift2.c>
+      a0: 24 1c 00 00  	addiu	$gp, $zero, 0x0 <esift2.c>
+      a4: 24 1d 00 00  	addiu	$sp, $zero, 0x0 <esift2.c>
+      a8: 24 1e 00 00  	addiu	$fp, $zero, 0x0 <esift2.c>
+      ac: 24 1f 00 00  	addiu	$ra, $zero, 0x0 <esift2.c>
+      b0: 3c 1d 00 10  	lui	$sp, 0x10 <esift2.c+0x10>
+      b4: 0c 00 00 38  	jal	0xe0 <begin>
+      b8: 00 00 00 00  	nop <esift2.c>
+      bc: 03 80 e0 25  	move	$gp, $gp
+      c0: 40 9c b8 00  	mtc0	$gp, $23, 0x0 <esift2.c>
+      c4: 00 00 00 00  	nop <esift2.c>
+      c8: 40 9c c8 00  	mtc0	$gp, $25, 0x0 <esift2.c>
+      cc: 08 00 00 33  	j	0xcc <__start+0x9c>
+      d0: 00 00 00 00  	nop <esift2.c>
+      d4: 00 00 00 00  	nop <esift2.c>
+      d8: 04 17 00 01  	<unknown>
+      dc: 04 17 00 01  	<unknown>
+
+000000e0 <begin>:
+      e0: 27 bd cf 18  	addiu	$sp, $sp, -0x30e8 <esift2.c+0xffffffffffffcf18>
+      e4: af bf 30 e4  	sw	$ra, 0x30e4($sp)
+      e8: af be 30 e0  	sw	$fp, 0x30e0($sp)
+      ec: 03 a0 f0 25  	move	$fp, $sp
+      f0: 24 03 00 00  	addiu	$3, $zero, 0x0 <esift2.c>
+      f4: 27 c2 00 00  	addiu	$2, $fp, 0x0 <esift2.c>
+      f8: 24 04 30 e0  	addiu	$4, $zero, 0x30e0 <esift2.c+0x30e0>
+      fc: 00 43 08 21  	addu	$1, $2, $3
+     100: 24 63 00 04  	addiu	$3, $3, 0x4 <esift2.c+0x4>
+     104: ac 20 00 00  	sw	$zero, 0x0($1)
+     108: 14 64 ff fc  	bne	$3, $4, 0xfc <begin+0x1c>
+     10c: 3c 01 00 03  	lui	$1, 0x3 <esift2.c+0x3>
+     110: 24 03 00 03  	addiu	$3, $zero, 0x3 <esift2.c+0x3>
+     114: 24 05 00 01  	addiu	$5, $zero, 0x1 <esift2.c+0x1>
+     118: 34 24 0d 41  	ori	$4, $1, 0xd41 <esift2.c+0xd41>
+     11c: 3c 01 0f ff  	lui	$1, 0xfff <esift2.c+0xfff>
+     120: 34 26 ff fc  	ori	$6, $1, 0xfffc <esift2.c+0xfffc>
+     124: 08 00 00 4e  	j	0x138 <begin+0x58>
+     128: 24 61 00 02  	addiu	$1, $3, 0x2 <esift2.c+0x2>
+     12c: 2c 67 01 c0  	sltiu	$7, $3, 0x1c0 <begin+0xe0>
+     130: 00 20 18 25  	move	$3, $1
+     134: 10 e0 00 10  	beqz	$7, 0x178 <begin+0x98>
+     138: 00 03 38 40  	sll	$7, $3, 0x1 <esift2.c+0x1>
+     13c: 08 00 00 53  	j	0x14c <begin+0x6c>
+     140: 00 e3 38 21  	addu	$7, $7, $3
+     144: 00 e4 08 2b  	sltu	$1, $7, $4
+     148: 10 20 ff f7  	beqz	$1, 0x128 <begin+0x48>
+     14c: 30 e1 00 01  	andi	$1, $7, 0x1 <esift2.c+0x1>
+     150: 10 20 ff fb  	beqz	$1, 0x140 <begin+0x60>
+     154: 00 07 41 02  	srl	$8, $7, 0x4 <esift2.c+0x4>
+     158: 7c e1 20 40  	ext	$1, $7, 0x1, 0x5 <esift2.c+0x5>
+     15c: 01 06 40 24  	and	$8, $8, $6
+     160: 00 25 08 04  	sllv	$1, $5, $1
+     164: 01 02 40 21  	addu	$8, $8, $2
+     168: 8d 09 00 04  	lw	$9, 0x4($8)
+     16c: 01 21 08 25  	or	$1, $9, $1
+     170: ad 01 00 04  	sw	$1, 0x4($8)
+     174: 08 00 00 50  	j	0x140 <begin+0x60>
+     178: 3c 01 0f ff  	lui	$1, 0xfff <esift2.c+0xfff>
+     17c: 24 03 00 01  	addiu	$3, $zero, 0x1 <esift2.c+0x1>
+     180: 24 07 00 01  	addiu	$7, $zero, 0x1 <esift2.c+0x1>
+     184: 24 06 00 01  	addiu	$6, $zero, 0x1 <esift2.c+0x1>
+     188: 34 24 ff fc  	ori	$4, $1, 0xfffc <esift2.c+0xfffc>
+     18c: 3c 01 00 03  	lui	$1, 0x3 <esift2.c+0x3>
+     190: 34 25 0d 3f  	ori	$5, $1, 0xd3f <esift2.c+0xd3f>
+     194: 24 e7 00 02  	addiu	$7, $7, 0x2 <esift2.c+0x2>
+     198: 30 68 00 1f  	andi	$8, $3, 0x1f <esift2.c+0x1f>
+     19c: 24 63 00 01  	addiu	$3, $3, 0x1 <esift2.c+0x1>
+     1a0: 00 07 09 02  	srl	$1, $7, 0x4 <esift2.c+0x4>
+     1a4: 00 24 08 24  	and	$1, $1, $4
+     1a8: 00 22 08 21  	addu	$1, $1, $2
+     1ac: 8c 21 00 04  	lw	$1, 0x4($1)
+     1b0: 00 20 08 27  	not	$1, $1
+     1b4: 01 01 08 06  	srlv	$1, $1, $8
+     1b8: 00 e5 40 2b  	sltu	$8, $7, $5
+     1bc: 30 21 00 01  	andi	$1, $1, 0x1 <esift2.c+0x1>
+     1c0: 00 26 30 21  	addu	$6, $1, $6
+     1c4: 15 00 ff f3  	bnez	$8, 0x194 <begin+0xb4>
+     1c8: 24 01 46 40  	addiu	$1, $zero, 0x4640 <esift2.c+0x4640>
+     1cc: 14 c1 00 03  	bne	$6, $1, 0x1dc <begin+0xfc>
+     1d0: 24 02 00 01  	addiu	$2, $zero, 0x1 <esift2.c+0x1>
+     1d4: 40 82 c8 00  	mtc0	$2, $25, 0x0 <esift2.c>
+     1d8: 08 00 00 79  	j	0x1e4 <begin+0x104>
+     1dc: 24 02 00 01  	addiu	$2, $zero, 0x1 <esift2.c+0x1>
+     1e0: 40 82 c0 00  	mtc0	$2, $24, 0x0 <esift2.c>
+     1e4: 03 c0 e8 25  	move	$sp, $fp
+     1e8: 8f be 30 e0  	lw	$fp, 0x30e0($sp)
+     1ec: 8f bf 30 e4  	lw	$ra, 0x30e4($sp)
+     1f0: 27 bd 30 e8  	addiu	$sp, $sp, 0x30e8 <esift2.c+0x30e8>
+     1f4: 03 e0 00 08  	jr	$ra

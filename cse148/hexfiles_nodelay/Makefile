@@ -1,4 +1,5 @@
-# This requires the patched Clang. Either build it on your host system or mount this directory into the Docker image from this repo's root directory.
+# This requires the patched Clang. Either build Clang on your host system (see the Dockerfile for how the patch is applicable).
+# or (preferred) mount this directory into the Docker image from this repo's root directory.
 
 CC = clang
 CFLAG = -target mips -mno-abicalls -fno-stack-protector -fno-builtin -O3

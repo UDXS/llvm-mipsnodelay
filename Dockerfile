@@ -15,3 +15,4 @@ RUN cd llvm-project && git apply /tmp/branchdelays.patch
 RUN cd llvm-project && mkdir build && \
 cmake -S llvm -B build -G Ninja -DCMAKE_INSTALL_PREFIX=/llvm -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang;lld" -DLLVM_TARGETS_TO_BUILD="Mips" && \
 cd build && cmake --build . -j 8 && cmake --build . --target install && cd / && rm -rf llvm-project
+ENV PATH="${PATH}:/llvm/bin"

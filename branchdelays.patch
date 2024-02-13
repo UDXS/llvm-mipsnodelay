@@ -7,7 +7,7 @@ index 638b3c94d..71c49317d 100644
  // -------------------------------------------------- //
  
 -let isBranch = 1, isBarrier = 1, isTerminator = 1, hasDelaySlot = 1 in {
-+let isBranch = 1, isBarrier = 1, isTerminator = 1, hasDelaySlots = 0 in {
++let isBranch = 1, isBarrier = 1, isTerminator = 1, hasDelaySlot = 0 in {
    def BT : InstBR<(outs), (ins BrTarget:$addr),
                    "bt\t$addr",
                    [(br bb:$addr)]> {
@@ -16,14 +16,14 @@ index 638b3c94d..71c49317d 100644
  
  // Jump and link
 -let isCall = 1, hasDelaySlot = 1, isCodeGenOnly = 1, Uses = [SP],
-+let isCall = 1, hasDelaySlots = 0, isCodeGenOnly = 1, Uses = [SP],
++let isCall = 1, hasDelaySlot = 0, isCodeGenOnly = 1, Uses = [SP],
      Defs = [RCA] in {
    def CALL : Pseudo<(outs), (ins CallTarget:$addr), "", []>;
    def CALLR : Pseudo<(outs), (ins GPR:$Rs1), "", [(Call GPR:$Rs1)]>;
  }
  
 -let isReturn = 1, isTerminator = 1, hasDelaySlot = 1, isBarrier = 1,
-+let isReturn = 1, isTerminator = 1, hasDelaySlots = 0, isBarrier = 1,
++let isReturn = 1, isTerminator = 1, hasDelaySlot = 0, isBarrier = 1,
      Uses = [RCA] in {
    def RET : InstRM<0b0, (outs), (ins),
                     "ld\t-4[%fp], %pc ! return",
@@ -32,7 +32,7 @@ index 638b3c94d..71c49317d 100644
  }
  
 -let isBranch = 1, isBarrier = 1, isTerminator = 1, hasDelaySlot = 1,
-+let isBranch = 1, isBarrier = 1, isTerminator = 1, hasDelaySlots = 0,
++let isBranch = 1, isBarrier = 1, isTerminator = 1, hasDelaySlot = 0,
      isIndirectBranch = 1, Uses = [SR] in {
    def BRIND_CC : InstRR<0b101, (outs), (ins GPR:$Rs1, CCOp:$DDDI),
                          "b$DDDI\t$Rs1", []> {
@@ -41,7 +41,7 @@ index 638b3c94d..71c49317d 100644
  // TODO: This only considers the case where BROFF is an immediate and not where
  // it is a register. Add support for register relative branching.
 -let isBranch = 1, isBarrier = 1, isTerminator = 1, hasDelaySlot = 1, Rs1 = 0,
-+let isBranch = 1, isBarrier = 1, isTerminator = 1, hasDelaySlots = 0, Rs1 = 0,
++let isBranch = 1, isBarrier = 1, isTerminator = 1, hasDelaySlot = 0, Rs1 = 0,
      Uses = [SR] in
    def BRR : InstBRR<(outs), (ins i16imm:$imm16, CCOp:$DDDI),
                      "b${DDDI}.r\t$imm16", []>;
@@ -54,7 +54,7 @@ index 43b8eb7fa..bdb4f79cc 100644
             [(MipsJmpLink RO:$rs)], II_JALR, FrmR> {
    let isCall = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Defs = [RA];
    let hasPostISelHook = 1;
  }
@@ -63,7 +63,7 @@ index 43b8eb7fa..bdb4f79cc 100644
    MicroMipsInst16<(outs), (ins RO:$rs), !strconcat(opstr, "\t$rs"),
             [], II_JR, FrmR> {
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let isBranch = 1;
    let isIndirectBranch = 1;
  }
@@ -72,7 +72,7 @@ index 43b8eb7fa..bdb4f79cc 100644
             [], II_JALRS, FrmR> {
    let isCall = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Defs = [RA];
  }
  
@@ -81,13 +81,13 @@ index 43b8eb7fa..bdb4f79cc 100644
    let isBranch = 1;
    let isTerminator = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Defs = [AT];
  }
  
  // MicroMIPS Jump and Link (Call) - Short Delay Slot
 -let isCall = 1, hasDelaySlot = 1, Defs = [RA] in {
-+let isCall = 1, hasDelaySlots = 0, Defs = [RA] in {
++let isCall = 1, hasDelaySlot = 0, Defs = [RA] in {
    class JumpLinkMM<string opstr, DAGOperand opnd> :
      InstSE<(outs), (ins opnd:$target), !strconcat(opstr, "\t$target"),
             [], II_JALS, FrmJ, opstr> {
@@ -96,7 +96,7 @@ index 43b8eb7fa..bdb4f79cc 100644
    let isTerminator = 1;
    let isBarrier = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Predicates = [RelocPIC, InMicroMips];
    let Defs = [AT];
  }
@@ -109,7 +109,7 @@ index fb2a83dc9..fe943fdb3 100644
    let isBranch = 1;
    let isIndirectBranch = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let isTerminator=1;
    let isBarrier=1;
    let isReturn=1;
@@ -118,7 +118,7 @@ index fb2a83dc9..fe943fdb3 100644
  
  // Mips16 pseudos
 -let isReturn=1, isTerminator=1, hasDelaySlot=1, isBarrier=1, hasCtrlDep=1,
-+let isReturn=1, isTerminator=1, hasDelaySlots=0, isBarrier=1, hasCtrlDep=1,
++let isReturn=1, isTerminator=1, hasDelaySlot=0, isBarrier=1, hasCtrlDep=1,
    hasExtraSrcRegAllocReq = 1 in
  def RetRA16 : MipsPseudo16<(outs), (ins), "", [(MipsRet)]>;
  
@@ -131,7 +131,7 @@ index 854563ab3..6f509db61 100644
  class BAL_DESC : BC_DESC_BASE<"bal", brtarget> {
    bit isCall = 1;
 -  bit hasDelaySlot = 1;
-+  bit hasDelaySlots = 0;
++  bit hasDelaySlot = 0;
    list<Register> Defs = [RA];
    bit isCTI = 1;
  }
@@ -140,7 +140,7 @@ index 854563ab3..6f509db61 100644
    dag OutOperandList = (outs);
    string AsmString = instr_asm;
 -  bit hasDelaySlot = 1;
-+  bit hasDelaySlots = 0;
++  bit hasDelaySlot = 0;
    InstrItinClass Itinerary = II_BC1CCZ;
  }
  
@@ -149,7 +149,7 @@ index 854563ab3..6f509db61 100644
    dag OutOperandList = (outs);
    string AsmString = instr_asm;
 -  bit hasDelaySlot = 1;
-+  bit hasDelaySlots = 0;
++  bit hasDelaySlot = 0;
    bit isCTI = 1;
    InstrItinClass Itinerary = II_BC2CCZ;
  }
@@ -158,7 +158,7 @@ index 854563ab3..6f509db61 100644
    bit isBranch = 1;
    bit isIndirectBranch = 1;
 -  bit hasDelaySlot = 1;
-+  bit hasDelaySlots = 0;
++  bit hasDelaySlot = 0;
    bit isTerminator=1;
    bit isBarrier=1;
    bit isCTI = 1;
@@ -167,7 +167,7 @@ index 854563ab3..6f509db61 100644
  
  // Pseudo instructions
 -let isCall = 1, isTerminator = 1, isReturn = 1, isBarrier = 1, hasDelaySlot = 1,
-+let isCall = 1, isTerminator = 1, isReturn = 1, isBarrier = 1, hasDelaySlots = 0,
++let isCall = 1, isTerminator = 1, isReturn = 1, isBarrier = 1, hasDelaySlot = 0,
      hasExtraSrcRegAllocReq = 1, isCTI = 1, Defs = [AT], hasPostISelHook = 1 in {
    class TailCallRegR6<Instruction JumpInst, Register RT, RegisterOperand RO> :
      PseudoSE<(outs), (ins RO:$rs), [(MipsTailCall RO:$rs)], II_JR>,
@@ -176,7 +176,7 @@ index 854563ab3..6f509db61 100644
    let isTerminator=1;
    let isBarrier=1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let isBranch = 1;
    let isIndirectBranch = 1;
    bit isCTI = 1;
@@ -189,7 +189,7 @@ index bd62a56d3..8d8be9ebe 100644
    let isBranch = 1;
    let isTerminator = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Defs = [AT];
  }
  
@@ -202,7 +202,7 @@ index 33132d9ed..587a76215 100644
    bit isBranch = 1;
    bit isIndirectBranch = 1;
 -  bit hasDelaySlot = 1;
-+  bit hasDelaySlots = 0;
++  bit hasDelaySlot = 0;
    bit isTerminator=1;
    bit isBarrier=1;
    bit isCTI = 1;
@@ -215,7 +215,7 @@ index 9498cd015..0d2fc9143 100644
    bit isBranch = 1;
    bit isTerminator = 1;
 -  bit hasDelaySlot = 1;
-+  bit hasDelaySlots = 0;
++  bit hasDelaySlot = 0;
    string BaseOpcode = instr_asm;
  }
  
@@ -228,7 +228,7 @@ index 14590ddac..296d12807 100644
    let isBranch = 1;
    let isTerminator = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Defs = [AT];
    let hasFCCRegOperand = 1;
  }
@@ -237,7 +237,7 @@ index 14590ddac..296d12807 100644
    let isBranch = 1;
    let isTerminator = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Defs = [AT];
    let hasFCCRegOperand = 1;
  }
@@ -250,7 +250,7 @@ index 973f40a21..4482152e5 100644
    let isBranch = 1;
    let isTerminator = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Defs = [AT];
    bit isCTI = 1;
  }
@@ -259,7 +259,7 @@ index 973f40a21..4482152e5 100644
    let isBranch = 1;
    let isTerminator = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Defs = [AT];
    bit isCTI = 1;
  }
@@ -268,7 +268,7 @@ index 973f40a21..4482152e5 100644
    let isBranch = 1;
    let isTerminator = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Defs = [AT];
    bit isCTI = 1;
  }
@@ -277,7 +277,7 @@ index 973f40a21..4482152e5 100644
    let isBranch = 1;
    let isTerminator = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Defs = [AT];
    bit isCTI = 1;
  }
@@ -286,7 +286,7 @@ index 973f40a21..4482152e5 100644
    let isTerminator=1;
    let isBarrier=1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let DecoderMethod = "DecodeJumpTarget";
    let Defs = [AT];
    bit isCTI = 1;
@@ -295,7 +295,7 @@ index 973f40a21..4482152e5 100644
    let isTerminator = 1;
    let isBarrier = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let AdditionalPredicates = [RelocPIC];
    let Defs = [AT];
    bit isCTI = 1;
@@ -303,7 +303,7 @@ index 973f40a21..4482152e5 100644
  
  // Base class for indirect branch and return instruction classes.
 -let isTerminator=1, isBarrier=1, hasDelaySlot = 1, isCTI = 1 in
-+let isTerminator=1, isBarrier=1, hasDelaySlots = 0, isCTI = 1 in
++let isTerminator=1, isBarrier=1, hasDelaySlot = 0, isCTI = 1 in
  class JumpFR<string opstr, RegisterOperand RO,
               SDPatternOperator operator = null_frag>:
    InstSE<(outs), (ins RO:$rs), "jr\t$rs", [(operator RO:$rs)], II_JR,
@@ -312,7 +312,7 @@ index 973f40a21..4482152e5 100644
  
  // Jump and Link (Call)
 -let isCall=1, hasDelaySlot=1, isCTI=1, Defs = [RA] in {
-+let isCall=1, hasDelaySlots=0, isCTI=1, Defs = [RA] in {
++let isCall=1, hasDelaySlot=0, isCTI=1, Defs = [RA] in {
    class JumpLink<string opstr, DAGOperand opnd> :
      InstSE<(outs), (ins opnd:$target), !strconcat(opstr, "\t$target"),
             [(MipsJmpLink tglobaladdr:$target)], II_JAL, FrmJ, opstr> {
@@ -321,13 +321,13 @@ index 973f40a21..4482152e5 100644
      InstSE<(outs), (ins RO:$rs, opnd:$offset),
             !strconcat(opstr, "\t$rs, $offset"), [], II_BCCZAL, FrmI, opstr> {
 -    let hasDelaySlot = 1;
-+    let hasDelaySlots = 0;
++    let hasDelaySlot = 0;
    }
  
  }
  
 -let isCall = 1, isTerminator = 1, isReturn = 1, isBarrier = 1, hasDelaySlot = 1,
-+let isCall = 1, isTerminator = 1, isReturn = 1, isBarrier = 1, hasDelaySlots = 0,
++let isCall = 1, isTerminator = 1, isReturn = 1, isBarrier = 1, hasDelaySlot = 0,
      hasExtraSrcRegAllocReq = 1, isCTI = 1, Defs = [AT] in {
    class TailCall<Instruction JumpInst, DAGOperand Opnd> :
      PseudoSE<(outs), (ins calltarget:$target), [], II_J>,
@@ -336,7 +336,7 @@ index 973f40a21..4482152e5 100644
    let isTerminator = 1;
    let isBarrier = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let Defs = [RA];
    bit isCTI = 1;
  }
@@ -345,7 +345,7 @@ index 973f40a21..4482152e5 100644
  // Return RA.
  let isReturn=1, isTerminator=1, isBarrier=1, hasCtrlDep=1, isCTI=1 in {
 -  let hasDelaySlot=1 in
-+  let hasDelaySlots=0 in
++  let hasDelaySlot=0 in
    def RetRA : PseudoSE<(outs), (ins), [(MipsRet)]>;
  
    let hasSideEffects=1 in
@@ -354,7 +354,7 @@ index 973f40a21..4482152e5 100644
    let isTerminator=1;
    let isBarrier=1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let isBranch = 1;
    let isIndirectBranch = 1;
    bit isCTI = 1;
@@ -363,7 +363,7 @@ index 973f40a21..4482152e5 100644
    let isTerminator = 1;
    let isBarrier = 1;
 -  let hasDelaySlot = 1;
-+  let hasDelaySlots = 0;
++  let hasDelaySlot = 0;
    let isReturn = 1;
    let isCodeGenOnly = 1;
    let hasCtrlDep = 1;
@@ -372,7 +372,7 @@ index 973f40a21..4482152e5 100644
    let isBranch=1;
    let isIndirectBranch=1;
 -  let hasDelaySlot=1;
-+  let hasDelaySlots=0;
++  let hasDelaySlot=0;
    let isTerminator=1;
    let isBarrier=1;
    bit isCTI = 1;
@@ -381,7 +381,7 @@ index 973f40a21..4482152e5 100644
                                                                       RO> {
    let isIndirectBranch=1;
 -  let hasDelaySlot=1;
-+  let hasDelaySlots=0;
++  let hasDelaySlot=0;
    bit isCTI = 1;
  }
  
@@ -390,7 +390,7 @@ index 973f40a21..4482152e5 100644
                                                simm32_relaxed:$imm)>, GPR_32;
  
 -let hasDelaySlot = 1, isCTI = 1 in {
-+let hasDelaySlots = 0, isCTI = 1 in {
++let hasDelaySlot = 0, isCTI = 1 in {
  def BneImm : MipsAsmPseudoInst<(outs GPR32Opnd:$rt),
                                 (ins imm64:$imm64, brtarget:$offset),
                                 "bne\t$rt, $imm64, $offset">;
@@ -403,7 +403,7 @@ index c4abccb24..2b0f7681f 100644
    bit isBranch = 1;
    bit isTerminator = 1;
 -  bit hasDelaySlot = 1;
-+  bit hasDelaySlots = 0;
++  bit hasDelaySlot = 0;
    list<Register> Defs = [AT];
  }
  
@@ -416,7 +416,7 @@ index 0a6479487..7c29f2be1 100644
  
  // Branch On integer register with Prediction (BPr).
 -let isBranch = 1, isTerminator = 1, hasDelaySlot = 1 in
-+let isBranch = 1, isTerminator = 1, hasDelaySlots = 0 in
++let isBranch = 1, isTerminator = 1, hasDelaySlot = 0 in
  multiclass BranchOnReg<list<dag> CCPattern> {
    def R    : F2_4<0, 1, (outs), (ins bprtarget16:$imm16, RegCCOp:$rcond, I64Regs:$rs1),
               "br$rcond $rs1, $imm16", CCPattern>;
@@ -429,7 +429,7 @@ index 9af8b17ed..592494f95 100644
  // Section A.7 - Branch on Integer Condition Codes with Prediction (SPARC v9)
  
 -let isBranch = 1, isTerminator = 1, hasDelaySlot = 1, isBarrier = 1 in {
-+let isBranch = 1, isTerminator = 1, hasDelaySlots = 0, isBarrier = 1 in {
++let isBranch = 1, isTerminator = 1, hasDelaySlot = 0, isBarrier = 1 in {
  // unconditional branch class.
  class BranchAlways<dag ins, string asmstr, list<dag> pattern>
    : F2_2<0b010, 0, (outs), ins, asmstr, pattern>;
@@ -438,7 +438,7 @@ index 9af8b17ed..592494f95 100644
    def BA : BranchAlways<(ins brtarget:$imm22), "ba $imm22", [(br bb:$imm22)]>;
  
 -let isBranch = 1, isTerminator = 1, hasDelaySlot = 1 in {
-+let isBranch = 1, isTerminator = 1, hasDelaySlots = 0 in {
++let isBranch = 1, isTerminator = 1, hasDelaySlot = 0 in {
  
  // conditional branch class:
  class BranchSP<dag ins, string asmstr, list<dag> pattern>
@@ -447,12 +447,12 @@ index 9af8b17ed..592494f95 100644
  }
  
 -} // let isBranch = 1, isTerminator = 1, hasDelaySlot = 1
-+} // let isBranch = 1, isTerminator = 1, hasDelaySlots = 0
++} // let isBranch = 1, isTerminator = 1, hasDelaySlot = 0
  
  
  // Indirect branch instructions.
 -let isTerminator = 1, isBarrier = 1,  hasDelaySlot = 1, isBranch =1,
-+let isTerminator = 1, isBarrier = 1,  hasDelaySlots = 0, isBranch =1,
++let isTerminator = 1, isBarrier = 1,  hasDelaySlot = 0, isBranch =1,
       isIndirectBranch = 1, rd = 0, isCodeGenOnly = 1 in {
    def BINDrr  : F3_1<2, 0b111000,
                     (outs), (ins (MEMrr $rs1, $rs2):$addr),
@@ -461,7 +461,7 @@ index 9af8b17ed..592494f95 100644
  // Section B.22 - Branch on Floating-point Condition Codes Instructions, p. 121
  
 -let isBranch = 1, isTerminator = 1, hasDelaySlot = 1 in {
-+let isBranch = 1, isTerminator = 1, hasDelaySlots = 0 in {
++let isBranch = 1, isTerminator = 1, hasDelaySlot = 0 in {
  
  // floating-point conditional branch class:
  class FPBranchSP<dag ins, string asmstr, list<dag> pattern>
@@ -470,7 +470,7 @@ index 9af8b17ed..592494f95 100644
                    "fb$cond,a,pn $cc, $imm19", [], IIC_fpu_normal_instr>;
  }
 -} // let isBranch = 1, isTerminator = 1, hasDelaySlot = 1
-+} // let isBranch = 1, isTerminator = 1, hasDelaySlots = 0
++} // let isBranch = 1, isTerminator = 1, hasDelaySlot = 0
  
  let Uses = [FCC0] in {
    def FBCOND  : FPBranchSP<(ins brtarget:$imm22, CCOp:$cond),
@@ -479,7 +479,7 @@ index 9af8b17ed..592494f95 100644
  // Variants of FBCOND that uses V9 opcode
  let Predicates = [HasV9], Uses = [FCC0], cc = 0,
 -    isBranch = 1, isTerminator = 1, hasDelaySlot = 1 in {
-+    isBranch = 1, isTerminator = 1, hasDelaySlots = 0 in {
++    isBranch = 1, isTerminator = 1, hasDelaySlot = 0 in {
    def FBCOND_V9  : F2_3<0b101, 0, 1, (outs),
                      (ins bprtarget:$imm19, CCOp:$cond),
                      "fb$cond %fcc0, $imm19",
@@ -488,7 +488,7 @@ index 9af8b17ed..592494f95 100644
  
  // Section B.22 - Branch on Co-processor Condition Codes Instructions, p. 123
 -let isBranch = 1, isTerminator = 1, hasDelaySlot = 1 in {
-+let isBranch = 1, isTerminator = 1, hasDelaySlots = 0 in {
++let isBranch = 1, isTerminator = 1, hasDelaySlot = 0 in {
  
  // co-processor conditional branch class:
  class CPBranchSP<dag ins, string asmstr, list<dag> pattern>
@@ -497,7 +497,7 @@ index 9af8b17ed..592494f95 100644
   : F2_2<0b111, 1, (outs), ins, asmstr, pattern>;
  
 -} // let isBranch = 1, isTerminator = 1, hasDelaySlot = 1
-+} // let isBranch = 1, isTerminator = 1, hasDelaySlots = 0
++} // let isBranch = 1, isTerminator = 1, hasDelaySlot = 0
  
  def CBCOND  : CPBranchSP<(ins brtarget:$imm22, CCOp:$cond),
                            "cb$cond $imm22",
@@ -506,7 +506,7 @@ index 9af8b17ed..592494f95 100644
  // This is the only Format 1 instruction
  let Uses = [O6],
 -    hasDelaySlot = 1, isCall = 1 in {
-+    hasDelaySlots = 0, isCall = 1 in {
++    hasDelaySlot = 0, isCall = 1 in {
    def CALL : InstSP<(outs), (ins calltarget:$disp, variable_ops),
                      "call $disp",
                      [],
@@ -515,7 +515,7 @@ index 9af8b17ed..592494f95 100644
  
  // JMPL Instruction.
 -let isTerminator = 1, hasDelaySlot = 1, isBarrier = 1 in {
-+let isTerminator = 1, hasDelaySlots = 0, isBarrier = 1 in {
++let isTerminator = 1, hasDelaySlot = 0, isBarrier = 1 in {
    def JMPLrr: F3_1<2, 0b111000,
                     (outs IntRegs:$rd), (ins (MEMrr $rs1, $rs2):$addr),
                     "jmpl $addr, $rd",
@@ -524,7 +524,7 @@ index 9af8b17ed..592494f95 100644
  // Section A.3 - Synthetic Instructions, p. 85
  // special cases of JMPL:
 -let isReturn = 1, isTerminator = 1, hasDelaySlot = 1, isBarrier = 1,
-+let isReturn = 1, isTerminator = 1, hasDelaySlots = 0, isBarrier = 1,
++let isReturn = 1, isTerminator = 1, hasDelaySlot = 0, isBarrier = 1,
      isCodeGenOnly = 1 in {
    let rd = 0, rs1 = 15 in
      def RETL: F3_2<2, 0b111000,
@@ -533,7 +533,7 @@ index 9af8b17ed..592494f95 100644
  
  // Section B.26 - Return from Trap Instruction
 -let isReturn = 1, isTerminator = 1, hasDelaySlot = 1,
-+let isReturn = 1, isTerminator = 1, hasDelaySlots = 0,
++let isReturn = 1, isTerminator = 1, hasDelaySlot = 0,
       isBarrier = 1, rd = 0 in {
    def RETTrr : F3_1<2, 0b111001,
                     (outs), (ins (MEMrr $rs1, $rs2):$addr),
@@ -542,7 +542,7 @@ index 9af8b17ed..592494f95 100644
  }
  
 -let Uses = [O6], isCall = 1, hasDelaySlot = 1 in
-+let Uses = [O6], isCall = 1, hasDelaySlots = 0 in
++let Uses = [O6], isCall = 1, hasDelaySlot = 0 in
    def TLS_CALL : InstSP<(outs),
                          (ins calltarget:$disp, TailRelocSymTLSCall:$sym,
                           variable_ops),
@@ -551,7 +551,7 @@ index 9af8b17ed..592494f95 100644
  // Instructions for tail calls.
  //===----------------------------------------------------------------------===//
 -let isCodeGenOnly = 1, isReturn = 1,  hasDelaySlot = 1,
-+let isCodeGenOnly = 1, isReturn = 1,  hasDelaySlots = 0,
++let isCodeGenOnly = 1, isReturn = 1,  hasDelaySlot = 0,
      isTerminator = 1, isBarrier = 1 in {
    def TAIL_CALL : InstSP<(outs), (ins calltarget:$disp, variable_ops),
                           "call $disp",
@@ -560,7 +560,7 @@ index 9af8b17ed..592494f95 100644
            (TAIL_CALL texternalsym:$dst)>;
  
 -let isCodeGenOnly = 1, isReturn = 1,  hasDelaySlot = 1,  isTerminator = 1,
-+let isCodeGenOnly = 1, isReturn = 1,  hasDelaySlots = 0,  isTerminator = 1,
++let isCodeGenOnly = 1, isReturn = 1,  hasDelaySlot = 0,  isTerminator = 1,
      isBarrier = 1, rd = 0 in {
    def TAIL_CALLri : F3_2<2, 0b111000,
                           (outs), (ins (MEMri $rs1, $simm13):$addr, variable_ops),
